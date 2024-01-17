@@ -1,0 +1,36 @@
+import "./Navbar.css";
+import { NavLink } from "react-router-dom";
+
+export const Navbar = () => {
+  const activeStyle = ({ isActive }) =>
+    isActive
+      ? {
+          fontWeight: "bold",
+        }
+      : { fontWeight: "normal" };
+  return (
+    <div className="navbar">
+      <strong>Fitness Tracker</strong>
+      <span>
+        <NavLink style={activeStyle} to="/">
+          Dashboard
+        </NavLink>
+      </span>
+      <span>
+        <NavLink style={activeStyle} to="/exercises">
+          Exercises
+        </NavLink>
+      </span>
+      <span>
+        <NavLink style={activeStyle} to="/food">
+          Food
+        </NavLink>
+      </span>
+      <span>
+        <NavLink style={activeStyle} to="/goal">
+          Goal
+        </NavLink>
+      </span>
+    </div>
+  );
+};
