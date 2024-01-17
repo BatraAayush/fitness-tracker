@@ -12,7 +12,7 @@ export const Home = () => {
     dispatch(getAllGoals());
     dispatch(getAllFood());
     dispatch(getAllExercises());
-  }, dispatch);
+  }, [dispatch]);
 
   const allStates = useSelector((state) => state);
   const exercises = allStates.exerciseState.exercises;
