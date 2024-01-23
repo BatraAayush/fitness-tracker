@@ -17,3 +17,9 @@
 .navbar strong {
   font-size: larger;
 }
+
+@media screen and (max-width: 576px) {
+  .navbar{
+    font-size: small;
+  }
+}

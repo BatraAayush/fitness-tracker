@@ -65,3 +65,10 @@ select {
   background-color: rgba(0, 0, 0, 0.5);
   z-index: 1;
 }
+
+@media screen and (max-width: 576px) {
+  .exercises .add-exercise {
+    left: 5%;
+    right: 5%;
+  }
+}
