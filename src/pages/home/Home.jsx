@@ -5,6 +5,10 @@ import { getAllGoals } from "../../redux/actions/gaolActions";
 import { getAllFood } from "../../redux/actions/foodActions";
 import { getAllExercises } from "../../redux/actions/exerciseActions";
 import "./Home.css";
+import { Chart as ChartJS, ArcElement, Tooltip, Legend } from "chart.js";
+import { Doughnut } from "react-chartjs-2";
+
+ChartJS.register(ArcElement, Tooltip, Legend);
 
 export const Home = () => {
   const dispatch = useDispatch();
@@ -29,17 +33,59 @@ export const Home = () => {
     return acc + calories;
   }, 0);
 
-  const remainingCalories = totalGoalCalories - totalExerciseCalories;
+  const remainingCalories =
+    totalGoalCalories - totalExerciseCalories > 0
+      ? totalGoalCalories - totalExerciseCalories
+      : 0;
+
+  const data = {
+    labels: [
+      "Calories Burned",
+      "Calories Consumed",
+      "Calories Goal",
+      "Remaining Goal",
+    ],
+    datasets: [
+      {
+        label: "# of Votes",
+        data: [
+          totalExerciseCalories,
+          totalFoodCalories,
+          totalGoalCalories,
+          remainingCalories,
+        ],
+        backgroundColor: [
+          "rgba(255, 99, 132, 0.2)",
+          "rgba(54, 162, 235, 0.2)",
+          "rgba(255, 206, 86, 0.2)",
+          "rgba(75, 192, 192, 0.2)",
+        ],
+        borderColor: [
+          "rgba(255, 99, 132, 1)",
+          "rgba(54, 162, 235, 1)",
+          "rgba(255, 206, 86, 1)",
+          "rgba(75, 192, 192, 1)",
+        ],
+        borderWidth: 1,
+      },
+    ],
+  };
   return (
     <div className="dashboard">
       <h1>Dashboard</h1>
+      <Doughnut data={data} />
       <div>
-        <h3>Total calories burned: {totalExerciseCalories.toFixed(2)} kcal</h3>
-        <h3>Total calories consumed: {totalFoodCalories.toFixed(2)} kcal</h3>
-        <h3>Total calories goal: {totalGoalCalories.toFixed(2)} kcal</h3>
-        <h3>
-          Remaining calories to goal:{" "}
-          {remainingCalories > 0 ? remainingCalories.toFixed(2) : 0}
+        <h3 style={{ color: "rgba(255, 99, 132)" }}>
+          Total Calories Burned: {totalExerciseCalories.toFixed(2)} Kcal
+        </h3>
+        <h3 style={{ color: "rgba(54, 162, 235)" }}>
+          Total Calories Consumed: {totalFoodCalories.toFixed(2)} Kcal
+        </h3>
+        <h3 style={{ color: "rgba(255, 206, 86)" }}>
+          Total Calories Goal: {totalGoalCalories.toFixed(2)} Kcal
+        </h3>
+        <h3 style={{ color: "rgba(75, 192, 192, 1)" }}>
+          Remaining Calories To Goal: {remainingCalories.toFixed(2)} Kcal
         </h3>
       </div>
     </div>

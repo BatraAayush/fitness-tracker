@@ -82,7 +82,7 @@ export const Goal = () => {
               onChange={(e) => setTargetDate(e.target.value)}
             />
             <br />
-            <label>Target Clories Value</label>
+            <label>Target Clories Value (Kcal)</label>
             <input
               value={targetCaloriesValue}
               type="Number"
@@ -121,10 +121,10 @@ export const Goal = () => {
                   <strong>Description:</strong> {description}
                 </div>
                 <div>
-                  <strong>Target Date:</strong> {targetDate}
+                  <strong>Target Date:</strong> {targetDate.substring(0, 10)}
                 </div>
                 <div>
-                  <strong>Target Calories Value:</strong> {targetCaloriesValue}
+                  <strong>Target Calories Value:</strong> {targetCaloriesValue} Kcal
                 </div>
                 <div>
                   <strong>Status:</strong> {status}
