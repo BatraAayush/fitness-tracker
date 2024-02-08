@@ -28,6 +28,8 @@ export const Home = () => {
   const totalFoodCalories = food.reduce((acc, { calories }) => {
     return acc + calories;
   }, 0);
+
+  const remainingCalories = totalGoalCalories - totalExerciseCalories;
   return (
     <div className="dashboard">
       <h1>Dashboard</h1>
@@ -37,7 +39,7 @@ export const Home = () => {
         <h3>Total calories goal: {totalGoalCalories.toFixed(2)} kcal</h3>
         <h3>
           Remaining calories to goal:{" "}
-          {(totalGoalCalories - totalExerciseCalories).toFixed(2)} kcal
+          {remainingCalories > 0 ? remainingCalories.toFixed(2) : 0}
         </h3>
       </div>
     </div>

@@ -1,8 +1,14 @@
 .navbar {
   display: flex;
-  justify-content: space-around;
-  padding: 1rem 0;
+  justify-content: space-between;
+  padding: 1rem;
   background-color: var(--light-blue);
+}
+
+.container-nav1{
+  display: flex;
+  width: 50%;
+  justify-content: space-around;
 }
 
 .navbar a {
@@ -20,6 +26,17 @@
 
 @media screen and (max-width: 576px) {
   .navbar{
-    font-size: small;
+    /* font-size: small; */
+    flex-direction: column;
   }
+
+  .navbar strong{
+    text-align: center;
+    margin-bottom: 1rem;
+  }
+
+  .navbar .container-nav1{
+    width: 90%;
+  }
+
 }

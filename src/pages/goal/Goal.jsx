@@ -78,7 +78,7 @@ export const Goal = () => {
             <label>Target Date</label>
             <input
               value={targetDate}
-              type="text"
+              type="date"
               onChange={(e) => setTargetDate(e.target.value)}
             />
             <br />
