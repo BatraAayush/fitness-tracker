@@ -113,16 +113,16 @@ export const Food = () => {
                   <strong>Name:</strong> {foodName}
                 </div>
                 <div>
-                  <strong>Calories:</strong> {calories} Kcal
+                  <strong>Calories:</strong> {calories} cal
                 </div>
                 <div>
-                  <strong>Protein:</strong> {proteinGrams}
+                  <strong>Protein:</strong> {proteinGrams} gm
                 </div>
                 <div>
-                  <strong>Fat:</strong> {fatGrams}
+                  <strong>Fat:</strong> {fatGrams} gm
                 </div>
                 <div>
-                  <strong>Carbohydrates:</strong> {carbohydrates}
+                  <strong>Carbohydrates:</strong> {carbohydrates} gm
                 </div>
                 <button onClick={() => deleteHandler(_id)}>Delete</button>
               </li>

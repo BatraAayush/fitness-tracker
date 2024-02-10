@@ -73,20 +73,34 @@ export const Home = () => {
   return (
     <div className="dashboard">
       <h1>Dashboard</h1>
-      <Doughnut data={data} />
       <div>
-        <h3 style={{ color: "rgba(255, 99, 132)" }}>
-          Total Calories Burned: {totalExerciseCalories.toFixed(2)} Kcal
+        <h3>
+          Total Calories Burned:{" "}
+          <span style={{ color: "grey" }}>
+            {totalExerciseCalories.toFixed(2)} cal
+          </span>
         </h3>
-        <h3 style={{ color: "rgba(54, 162, 235)" }}>
-          Total Calories Consumed: {totalFoodCalories.toFixed(2)} Kcal
+        <h3>
+          Total Calories Consumed:{" "}
+          <span style={{ color: "grey" }}>
+            {totalFoodCalories.toFixed(2)} cal
+          </span>
         </h3>
-        <h3 style={{ color: "rgba(255, 206, 86)" }}>
-          Total Calories Goal: {totalGoalCalories.toFixed(2)} Kcal
+        <h3>
+          Total Calories Goal:{" "}
+          <span style={{ color: "grey" }}>
+            {totalGoalCalories.toFixed(2)} cal
+          </span>
         </h3>
-        <h3 style={{ color: "rgba(75, 192, 192, 1)" }}>
-          Remaining Calories To Goal: {remainingCalories.toFixed(2)} Kcal
+        <h3>
+          Remaining Calories To Goal:{" "}
+          <span style={{ color: "grey" }}>
+            {remainingCalories.toFixed(2)} cal
+          </span>
         </h3>
+      </div>
+      <div className="graph">
+        <Doughnut data={data} />
       </div>
     </div>
   );

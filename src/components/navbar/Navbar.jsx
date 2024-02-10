@@ -24,12 +24,12 @@ export const Navbar = () => {
         </span>
         <span>
           <NavLink style={activeStyle} to="/food">
-            Food
+            Foods
           </NavLink>
         </span>
         <span>
           <NavLink style={activeStyle} to="/goal">
-            Goal
+            Goals
           </NavLink>
         </span>
       </div>

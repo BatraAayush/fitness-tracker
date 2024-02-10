@@ -81,7 +81,7 @@ export const Exercises = () => {
                 </div>
                 <div>
                   <strong>Calories Burned:</strong> {caloriesBurned.toFixed(2)}{" "}
-                  Kcal
+                  cal
                 </div>
                 <button onClick={() => deleteHandler(_id)}>Delete</button>
               </li>
