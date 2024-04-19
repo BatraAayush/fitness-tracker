@@ -6,7 +6,7 @@ export const SET_EXERCISE_ERROR = "set_exercise_error";
 export const ADD_EXERCISE = "add_exercise";
 export const DELETE_EXERCISE = "delete_exercise";
 
-const baseURL = "https://assignment-17-production.up.railway.app/api";
+const baseURL = "https://assignment-17-one.vercel.app/api";
 
 const getExercises = async () => {
   try {

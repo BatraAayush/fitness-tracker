@@ -6,7 +6,7 @@ export const SET_GOAL_ERROR = "set_goal_error";
 export const ADD_GOAL = "add_goal";
 export const DELETE_GOAL = "delete_goal";
 
-const baseURL = "https://assignment-17-production.up.railway.app/api";
+const baseURL = "https://assignment-17-one.vercel.app/api";
 
 const getGoal = async () => {
   try {

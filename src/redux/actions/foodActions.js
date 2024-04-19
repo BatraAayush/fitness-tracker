@@ -6,7 +6,7 @@ export const SET_FOOD_ERROR = "set_food_error";
 export const ADD_FOOD = "add_food";
 export const DELETE_FOOD = "delete_food";
 
-const baseURL = "https://assignment-17-production.up.railway.app/api";
+const baseURL = "https://assignment-17-one.vercel.app/api";
 
 const getFood = async () => {
   try {
